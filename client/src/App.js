@@ -95,3 +95,6 @@ function App() {
 }
 
 export default App;
+
+//MONGO_URL=mongodb+srv://admin:VfHIsaY5qj9T1ZB5@cluster0.gh2np.mongodb.net/?retryWrites=true&w=majority
+//VfHIsaY5qj9T1ZB5
