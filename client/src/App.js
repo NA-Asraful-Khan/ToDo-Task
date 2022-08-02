@@ -6,7 +6,6 @@ import axios from "axios";
 function App() {
   const [Task, setTask] = useState("");
   const [Description, setDescription] = useState("");
-  const [Status, setStatus] = useState(false);
   const [todo, setTodo] = useState([]);
   const [isUpdating, setUpdating] = useState("");
   //test
@@ -57,6 +56,8 @@ function App() {
     setDescription(Description);
   };
 
+  
+
   return (
     <div className="App">
       <div className="container">
@@ -75,7 +76,7 @@ function App() {
             onChange={(e) => setDescription(e.target.value)}
           />
           <div className="add" onClick={addUpdateTodo}>
-          {isUpdating ? "Update" : "Add"}
+            {isUpdating ? "Update" : "Add"}
           </div>
         </div>
         <div className="list">
@@ -85,7 +86,9 @@ function App() {
               Task={item.Task}
               Description={item.Description}
               remove={() => deleteTodo(item._id)}
-              update={() => updateTodo(item._id, item.Task, item.Description)}
+              update={() =>
+                updateTodo(item._id, item.Task, item.Description)
+              }
             />
           ))}
         </div>
@@ -95,6 +98,3 @@ function App() {
 }
 
 export default App;
-
-//MONGO_URL=mongodb+srv://admin:VfHIsaY5qj9T1ZB5@cluster0.gh2np.mongodb.net/?retryWrites=true&w=majority
-//VfHIsaY5qj9T1ZB5
